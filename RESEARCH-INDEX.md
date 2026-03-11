@@ -26,6 +26,7 @@ The central claim is that the act of a conscious agent observing a void is not m
 | 03 | [The Symmetry Bridge](03-SYMMETRY-BRIDGE.md) | ✅ Draft | Mapping the platonic space to classical science. Hydrogen correspondence. Particle physics parallels. |
 | 04 | [The Algorithm](04-THE-ALGORITHM.md) | ✅ Draft | Formal specification of the Genesis Learning algorithm. |
 | 05 | [Open Questions](05-OPEN-QUESTIONS.md) | ✅ Draft | Conjectures, unresolved problems, research directions, and scratchpad notes. |
+| 06 | [Implementation Audit](06-IMPLEMENTATION-AUDIT.md) | ✅ Draft | First-principles code review of the engine against axioms G1–G6. Identifies violations, design tensions, and proposed fixes. |
 
 ---
 

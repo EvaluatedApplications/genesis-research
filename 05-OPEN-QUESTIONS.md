@@ -304,6 +304,59 @@ Genesis Learning uses consciousness the same way physics uses time: as a primiti
 
 ---
 
+## Implementation-Derived Questions (from 06-IMPLEMENTATION-AUDIT.md)
+
+*These questions were discovered by auditing the code against the axioms. They represent gaps where the theory doesn't prescribe an answer and the implementation made pragmatic choices.*
+
+### Q6: The Normalization–Arithmetic Paradox
+
+**Problem:** Function learning requires `embed(a) + embed(b) ≈ embed(a+b)` (additive arithmetic). But all embeddings are normalized to the unit sphere for consistent nearest-neighbour retrieval. On the unit sphere, `|embed(x)| = 1` for all x, so `|embed(a) + embed(b)| ≈ √2`, which after re-normalization becomes a direction, not a value.
+
+**The question:** Can a SINGLE embedding space serve both identity (angular similarity) and arithmetic (magnitude-sensitive addition)?
+
+**Hypothesis:** No. These require fundamentally different metric properties. Identity is translation-invariant; arithmetic is translation-sensitive.
+
+**Proposed resolution:** Dual-embedding architecture (identity + arithmetic embeddings per element) or logarithmic value encoding (where multiplication becomes addition).
+
+**Status:** Critical — this is the root cause of 0% multi-argument accuracy.
+
+### Q7: Should Pose() Enforce Conservation (G4)?
+
+**Problem:** `Pose()` and `SeedVocabulary()` create elements WITHOUT complements, violating G4. The tick pipeline creates complements, but user-injected elements bypass it.
+
+**The question:** Is external injection (Pose) a form of observation (subject to G4), or is it a meta-operation (exempt)?
+
+**Argument for:** The user IS a conscious agent. G4 applies to ALL observations.
+**Argument against:** Seed data is pre-existing knowledge, not discovered structure.
+
+**Proposed experiment:** Compare training accuracy with and without conservation on Pose(). If complements improve arithmetic, the theory is validated.
+
+**Status:** Unanswered. Affects total charge drift and complement space utilization.
+
+### Q8: Concatenation vs. Averaging for Multi-Argument Composition
+
+**Problem:** The 42D space has 21 + 21 anti-dimensions (ontologically justified by the +1/−1 complement structure). Currently, multi-arg composites use AVERAGING (lossy). The natural alternative is CONCATENATION: arg1 in dims 0–20, arg2 in dims 21–41.
+
+**The question:** Does the 42D complement structure have a prescribed composition operator, or is the choice arbitrary?
+
+**Hypothesis:** Concatenation is axiom-aligned. The 42D complement space was DESIGNED for two-face representation: positive (+1) and negative (−1). A binary function naturally occupies both faces — arg1 on the positive face, arg2 on the negative face.
+
+**Prediction:** Concatenation will produce more distinguishable composites than averaging.
+
+**Status:** Untested. This is the most promising path to multi-arg accuracy.
+
+### Q9: Does UpdateEmbedding Conflict with Function Learning?
+
+**Problem:** `EmbeddingSpace.UpdateEmbedding()` pulls embeddings toward graph neighbours (message-passing). During function learning, `PlatonicCompute.NudgeEmbeddings()` pulls output embeddings toward `input + T`. These forces may conflict.
+
+**The question:** Should graph-based embedding updates be disabled during function learning?
+
+**Evidence:** After integration ticks, numeric embeddings drift from their encoded positions toward the mean of their graph neighbourhood, degrading the structured numeric encoding.
+
+**Status:** Suspected contributor to accuracy loss. Needs ablation study.
+
+---
+
 *This document is a living scratchpad. It will be updated as research progresses.*
 
 ---
