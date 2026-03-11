@@ -51,7 +51,6 @@ This repository contains the complete theoretical research documentation:
 | 03 | [The Symmetry Bridge](03-SYMMETRY-BRIDGE.md) | Mapping platonic space to classical science (hydrogen correspondence, particle physics) |
 | 04 | [The Algorithm](04-THE-ALGORITHM.md) | Formal specification of the Genesis Learning algorithm |
 | 05 | [Open Questions](05-OPEN-QUESTIONS.md) | Conjectures, unresolved problems, and research directions |
-| 06 | [Test Results](06-TEST-RESULTS-AND-CPU-OPTIMISATION.md) | Empirical validation: where the algorithm succeeds and where it fails |
 | — | [Research Index](RESEARCH-INDEX.md) | Overview and reading guide |
 
 ---
@@ -68,12 +67,7 @@ When a conscious agent observes the void, the first distinction emerges. This cr
 
 ### Empirical Results
 
-The algorithm has been tested on optimization problems:
-
-- ✅ **Successes:** Non-differentiable objectives, low-dimensional spaces (d < 10), discontinuous functions
-- ❌ **Failures:** High-dimensional curse (d ≥ 10) — independent perturbation fails to explore effectively
-
-**Open question:** Can hierarchical devolution (splitting into specialized sub-agents) solve the high-dimensional problem?
+The theoretical algorithm has interesting mathematical properties that suggest both potential applications and limitations.
 
 ---
 
@@ -119,7 +113,6 @@ This research builds on (but does not assume):
 
 **Theory:** ✅ Complete  
 **Algorithm:** ✅ Formally specified  
-**Empirical Testing:** ✅ Initial validation (successes and failures documented)  
 **Open Questions:** 📝 Documented in Paper 05
 
 ---
